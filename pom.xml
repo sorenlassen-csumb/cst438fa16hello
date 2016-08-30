@@ -22,5 +22,12 @@
   </dependencies>
   <build>
     <finalName>cst438fa16hello</finalName>
+    <plugins>
+      <plugin>
+	<groupId>org.eclipse.jetty</groupId>
+	<artifactId>jetty-maven-plugin</artifactId>
+	<version>9.3.11.v20160721</version>
+      </plugin>
+    </plugins>
   </build>
 </project>
