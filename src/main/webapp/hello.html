@@ -19,7 +19,10 @@ function greet() {
   var thename = $("#name").val();
   $.get("/rest/hello", { name: thename }, function(thehello) {
       $("#greet").text(thehello);
-    });
+    })
+    .fail(function(jqXHR, textStatus, errorThrown) {
+       $("#greet").text(textStatus + ": " + errorThrown);
+     });
 };
 </script>
 
