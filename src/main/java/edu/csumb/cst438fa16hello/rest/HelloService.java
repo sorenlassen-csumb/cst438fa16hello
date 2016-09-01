@@ -14,7 +14,7 @@ public class HelloService {
     @Path("/hello")
     public Response hello(
         @QueryParam("name") String name) {
-	if (name.isEmpty()) {
+	if (name == null || name.isEmpty()) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         } else {
 	    return Response.ok("hello " + name).build();
