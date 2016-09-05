@@ -7,6 +7,9 @@ import javax.ws.rs.core.Response;
 
 /**
  * REST service that greets requests.
+ *
+ * See:
+ * https://jersey.java.net/documentation/latest/jaxrs-resources.html
  */
 @Path("/")
 public class HelloService {

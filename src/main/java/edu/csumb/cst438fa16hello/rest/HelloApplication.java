@@ -5,7 +5,7 @@ import javax.ws.rs.ApplicationPath;
 
 /**
  * See:
- * http://https://docs.oracle.com/cd/E24329_01/web.1211/e24983/configure.htm#RESTF189
+ * https://jersey.java.net/documentation/latest/deployment.html
  * http://buraktas.com/resteasy-example-without-using-a-web-xml/
  * http://stackoverflow.com/a/26721737
  */
