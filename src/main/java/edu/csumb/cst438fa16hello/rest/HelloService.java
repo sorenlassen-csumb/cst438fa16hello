@@ -1,5 +1,6 @@
 package edu.csumb.cst438fa16hello.rest;
 
+import edu.csumb.cst438fa16hello.DayOfWeek;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
