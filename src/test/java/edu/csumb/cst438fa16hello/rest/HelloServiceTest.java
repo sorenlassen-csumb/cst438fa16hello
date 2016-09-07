@@ -22,6 +22,13 @@ public class HelloServiceTest extends JerseyTest {
     }
 
     @Test
+    public void testTodayEndsWithDay() {
+        WebTarget webTarget = target("today");                             // arrange
+        String theday = webTarget.request().get(String.class);             // act
+        assertThat(theday, endsWith("day"));                               // assert
+    }
+
+    @Test
     public void testHelloWithNonEmptyName() {
         WebTarget webTarget = target("hello").queryParam("name", "Alan");  // arrange
         String thehello = webTarget.request().get(String.class);           // act

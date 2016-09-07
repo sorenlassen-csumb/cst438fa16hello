@@ -15,6 +15,12 @@ import javax.ws.rs.core.Response;
 @Path("/")
 public class HelloService {
     @GET
+    @Path("/today")
+    public String today() {
+	return DayOfWeek.today();
+    }
+
+    @GET
     @Path("/hello")
     public Response hello(@QueryParam("name") String name) {
         if (name == null || name.isEmpty()) {
