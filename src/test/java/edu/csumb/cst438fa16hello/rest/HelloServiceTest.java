@@ -32,7 +32,7 @@ public class HelloServiceTest extends JerseyTest {
     public void testHelloWithEmptyName() {
         WebTarget webTarget = target("hello").queryParam("name", "");      // arrange
         Response response = webTarget.request().get();                     // act
-        assertThat(Response.getStatus(),
+        assertThat(response.getStatus(),
                    equalTo(Response.Status.BAD_REQUEST.getStatusCode()));  // assert
     }
 
@@ -40,7 +40,7 @@ public class HelloServiceTest extends JerseyTest {
     public void testHelloWithoutName() {
         WebTarget webTarget = target("hello");                             // arrange
         Response response = webTarget.request().get();                     // act
-        assertThat(Response.getStatus(),
+        assertThat(response.getStatus(),
                    equalTo(Response.Status.BAD_REQUEST.getStatusCode()));  // assert
     }
 }
