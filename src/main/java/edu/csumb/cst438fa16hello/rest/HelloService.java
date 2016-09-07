@@ -9,19 +9,18 @@ import javax.ws.rs.core.Response;
 /**
  * REST service that greets requests.
  *
- * See:
+ * This is a "root resource class" as explained in
  * https://jersey.java.net/documentation/latest/jaxrs-resources.html
  */
 @Path("/")
 public class HelloService {
     @GET
     @Path("/hello")
-    public Response hello(
-        @QueryParam("name") String name) {
-	if (name == null || name.isEmpty()) {
+    public Response hello(@QueryParam("name") String name) {
+        if (name == null || name.isEmpty()) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         } else {
-	    return Response.ok("hello " + name).build();
-	}
+            return Response.ok("hello " + name).build();
+        }
     }
 }

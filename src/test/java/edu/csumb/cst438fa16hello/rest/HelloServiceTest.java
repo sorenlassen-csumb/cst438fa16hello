@@ -1,10 +1,12 @@
 package edu.csumb.cst438fa16hello.rest;
 
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;
+import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Response;
 
@@ -21,19 +23,24 @@ public class HelloServiceTest extends JerseyTest {
 
     @Test
     public void testHelloWithNonEmptyName() {
-        String thehello = target().path("hello").queryParam("name", "Alan").request().get(String.class);
-        assertEquals("hello Alan", thehello);
+        WebTarget webTarget = target("hello").queryParam("name", "Alan");  // arrange
+        String thehello = webTarget.request().get(String.class);           // act
+        assertThat(thehello, equalTo("hello Alan"));                       // assert
     }
 
     @Test
     public void testHelloWithEmptyName() {
-        Response response = target().path("hello").queryParam("name", "").request().get();
-        assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+        WebTarget webTarget = target("hello").queryParam("name", "");      // arrange
+        Response response = webTarget.request().get();                     // act
+        assertThat(Response.getStatus(),
+                   equalTo(Response.Status.BAD_REQUEST.getStatusCode()));  // assert
     }
 
     @Test
     public void testHelloWithoutName() {
-        Response response = target().path("hello").request().get();
-        assertEquals(Response.Status.BAD_REQUEST.getStatusCode(), response.getStatus());
+        WebTarget webTarget = target("hello");                             // arrange
+        Response response = webTarget.request().get();                     // act
+        assertThat(Response.getStatus(),
+                   equalTo(Response.Status.BAD_REQUEST.getStatusCode()));  // assert
     }
 }
