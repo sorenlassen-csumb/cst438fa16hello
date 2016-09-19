@@ -17,7 +17,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 //
 // Since the class name ends in IT, it's run with "mvn integration-test", not "mvn test".
 public class HelloIT {
-    // On Mac run "brew install googledriver" to make this work.
+    // Requires chromedriver. See:
+    // http://docs.seleniumhq.org/docs/03_webdriver.jsp#chromedriver
+    // On Mac you can install it with "brew install googledriver" if you have Homebrew.
     WebDriver driver = new ChromeDriver();
 
     @Before
