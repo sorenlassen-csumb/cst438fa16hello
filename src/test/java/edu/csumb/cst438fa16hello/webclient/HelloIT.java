@@ -48,7 +48,7 @@ public class HelloIT {
         // Now submit the form. WebDriver will find the form for us from the element
         driver.findElement(By.id("submit")).click();
 
-        // Google's search is rendered dynamically with JavaScript.
+        // The greeting is rendered dynamically with JavaScript.
         // Wait for the page to load, timeout after 10 seconds
         (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
