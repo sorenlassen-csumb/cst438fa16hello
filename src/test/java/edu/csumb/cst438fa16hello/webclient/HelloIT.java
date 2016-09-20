@@ -43,13 +43,7 @@ public class HelloIT {
      */
     @Test
     public void testGreetsByName() {
-        // Sanity check: greeting is empty when the page is first loaded
-        assertThat(driver.findElement(By.id("greet")).getText(), equalTo(""));
-
-        // Enter something to search for
         driver.findElement(By.id("name")).sendKeys("Alan");
-
-        // Now submit the form. WebDriver will find the form for us from the element
         driver.findElement(By.id("submit")).click();
 
         // The greeting is rendered dynamically with JavaScript.
