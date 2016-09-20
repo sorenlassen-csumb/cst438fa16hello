@@ -11,11 +11,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-// Based on Selenium2Example from
-// http://docs.seleniumhq.org/docs/03_webdriver.jsp#introducing-the-selenium-webdriver-api-by-example
-// modified for JUnit.
-//
-// Since the class name ends in IT, it's run with "mvn integration-test", not "mvn test".
+/**
+ * User story:
+ *
+ *   As a user I want to be greeted by the name of my choice to become amused
+ *
+ * Class name ends in IT so it runs with "mvn integration-test", not "mvn test".
+ */
 public class HelloIT {
     // Requires chromedriver. See:
     // http://docs.seleniumhq.org/docs/03_webdriver.jsp#chromedriver
@@ -32,11 +34,13 @@ public class HelloIT {
         driver.quit(); // close browser
     }
 
-    @Test
-    public void testTitle() {
-        assertThat(driver.getTitle(), equalTo("Hello"));
-    }
-
+    /**
+     * Acceptance test:
+     *
+     *   Given I am on the hello page
+     *   When I enter "Alan"
+     *   Then I see the greeting "hello Alan"
+     */
     @Test
     public void testGreetsByName() {
         // Sanity check: greeting is empty when the page is first loaded
