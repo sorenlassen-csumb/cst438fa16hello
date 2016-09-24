@@ -1,4 +1,4 @@
-Feature: Hello friend
+Feature: Hello web page
   As a user I want to be greeted by the name of my choice to become amused
 
   Scenario: Hello Alan

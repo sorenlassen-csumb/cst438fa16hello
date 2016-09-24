@@ -1,4 +1,4 @@
-package feature.hello;
+package feature.webclient;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HelloFriendSteps {
+public class HelloWebclientSteps {
     WebDriver driver = new ChromeDriver();
 
     @After
