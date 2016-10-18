@@ -7,7 +7,9 @@ import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,10 +21,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * Class name ends in IT so it runs with "mvn integration-test", not "mvn test".
  */
 public class HelloIT {
-    // Requires chromedriver. See:
-    // http://docs.seleniumhq.org/docs/03_webdriver.jsp#chromedriver
-    // On Mac you can install it with "brew install googledriver" if you have Homebrew.
-    WebDriver driver = new ChromeDriver();
+    // Requires phantomjs. See:
+    // http://phantomjs.org/download.html
+    // On Mac you can install it with "brew install phantomjs" if you have Homebrew.
+    // CircleCI has it: https://circleci.com/docs/build-image-trusty/
+    WebDriver driver = new PhantomJSDriver();
 
     @Before
     public void setUp() {
