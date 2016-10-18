@@ -82,12 +82,33 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <!-- installs ${phantomjs.binary} used in webdriver integration tests -->
+        <groupId>com.github.klieber</groupId>
+        <artifactId>phantomjs-maven-plugin</artifactId>
+        <version>0.7</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>install</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <version>2.1.1</version>
+        </configuration>
+      </plugin>
       <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-failsafe-plugin -->
       <plugin>
         <!-- "mvn failsafe:integration-test" runs tests named *IT.java -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>2.19.1</version>
+        <configuration>
+          <systemPropertyVariables>
+            <phantomjs.binary.path>${phantomjs.binary}</phantomjs.binary.path>
+          </systemPropertyVariables>
+        </configuration>
         <!-- http://maven.apache.org/surefire/maven-failsafe-plugin/usage.html#Using_jetty_and_maven-failsafe-plugin -->
         <executions>
           <execution>
