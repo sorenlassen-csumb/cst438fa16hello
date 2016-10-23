@@ -49,7 +49,7 @@ public class HelloIT {
         // The greeting is rendered dynamically with JavaScript.
         // Wait for the page to load, timeout after 10 seconds
         (new WebDriverWait(driver, 10))
-            .until(ExpectedConditions.textToBe(By.id("greet"), "hello Alan"));
+            .until(ExpectedConditions.textToBe(By.id("greet"), "hello Bobby"));
 
         // Success
     }
