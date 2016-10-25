@@ -5,6 +5,5 @@ deploy:
   artifact: target/cst438fa16hello.war
 global:
   application_name: cst438fa16hello
-  default_platform: Tomcat 8 Java 8
   default_region: us-west-2
   sc: git
