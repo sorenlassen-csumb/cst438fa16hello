@@ -1,3 +1,9 @@
+general:
+  artifacts:
+    - "target/cst438fa16hello.war"
+dependencies:
+  pre:
+    - sudo pip install awsebcli
 test:
   override:
     - mvn verify
@@ -5,6 +11,11 @@ test:
     - mkdir -v -p $CIRCLE_TEST_REPORTS/reports/
     - cp -v ./*/*-reports/*.xml $CIRCLE_TEST_REPORTS/reports/
     - bash <(curl -s https://codecov.io/bash)
+deployment:
+  production:
+    branch: master
+    commands:
+      - eb deploy --staged
 notify:
   webhooks:
     - url: http://csumbse.net/harbormaster/hook/circleci/
