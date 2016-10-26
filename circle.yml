@@ -6,6 +6,9 @@ dependencies:
     - sudo apt-get install python-dev
     - sudo pip install awsebcli
 test:
+  pre:
+    - wc ~/.aws/credentials
+    - head -n2 ~/.aws/credentials
   override:
     - mvn verify
   post:
