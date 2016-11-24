@@ -3,6 +3,7 @@ general:
     - "target/cst438fa16hello.war"
 dependencies:
   pre:
+    - sudo apt-get update
     - sudo apt-get install python-dev
     - sudo pip install awsebcli
 test:
